@@ -1,2 +1,0 @@
-function setLang(lang){document.documentElement.setAttribute('data-lang',lang);document.documentElement.setAttribute('lang',lang==='en'?'en':'zh-Hant');document.getElementById('btn-zh').classList.toggle('active',lang==='zh');document.getElementById('btn-en').classList.toggle('active',lang==='en');try{localStorage.setItem('rbpv1-lang',lang);}catch(e){}}
-(function init(){var saved=null;try{saved=localStorage.getItem('rbpv1-lang');}catch(e){}if(saved==='en'||saved==='zh'){setLang(saved);}})();
