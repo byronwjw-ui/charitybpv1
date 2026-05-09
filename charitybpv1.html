@@ -18,7 +18,6 @@
   html[data-lang="en"] body{font-family:Inter,Roboto,Georgia,system-ui,-apple-system,"Segoe UI",sans-serif}
   .serif{font-family:Georgia,"Source Han Serif SC","Songti SC","SimSun",serif}
 
-  /* LANG TOGGLE */
   .lang-toggle{position:fixed;top:18px;right:20px;z-index:100;
     background:rgba(10,47,68,0.92);border:1px solid var(--gold);border-radius:24px;
     padding:4px;display:flex;gap:0;backdrop-filter:blur(6px);
@@ -29,7 +28,6 @@
   .lang-toggle button:hover{color:var(--gold)}
   .lang-toggle button.active{background:var(--gold);color:var(--deep-blue);font-weight:700}
 
-  /* show/hide by lang */
   html[data-lang="zh"] .en-only{display:none}
   html[data-lang="en"] .zh-only{display:none}
 
@@ -222,13 +220,11 @@
 </head>
 <body>
 
-<!-- LANGUAGE TOGGLE -->
 <div class="lang-toggle" role="group" aria-label="Language toggle">
   <button id="btn-zh" class="active" type="button" onclick="setLang('zh')">中</button>
   <button id="btn-en" type="button" onclick="setLang('en')">EN</button>
 </div>
 
-<!-- 01 · COVER -->
 <header class="cover">
   <div class="eyebrow">CHARITY · BLUEPRINT · V1 · 2026.05</div>
   <h1 class="zh-only">RETURN<span class="bar">｜</span>回到桌前</h1>
@@ -242,9 +238,128 @@
 
 <main>
 
-<!-- SECTION_02_PLACEHOLDER -->
-<!-- SECTION_03_PLACEHOLDER -->
-<!-- SECTION_04_PLACEHOLDER -->
+<!-- 02 · EXECUTIVE SUMMARY -->
+<section>
+  <div class="sec-num">02 · EXECUTIVE SUMMARY</div>
+  <h2 class="zh-only">執行摘要 <span class="en">A One-Page Read</span></h2>
+  <h2 class="en-only">Executive Summary</h2>
+  <p class="lead zh-only">2026 年 5 月。香港中盈頂耀新能源投資集團主導的雪豹保護戰略項目（V2.1）已成稿待啟，集團內地碳匯事業部唯一總部級載體——四川天府中碳——將承接執行。RBW Studio 已上線，新加坡公司即將完成註冊。今年 7 月起，姐弟將共同回到四川山區駐紮兩週執行畫畫公益並在成都麓湖義賣，每年 2 次（7 月、1 月）持續性運營。本文件把這四條真實主線縫成同一張 18 個月的執行地圖。</p>
+  <p class="lead en-only">May 2026. The Snow Leopard Conservation Strategic Plan (V2.1), led by Hong Kong Zhongying Dingyao New Energy Investment Group, is finalised and ready to launch — to be executed by Sichuan Tianfu Carbon, the Group's sole headquarters-level carbon assets vehicle on the mainland. RBW Studio is live; its Singapore entity is on track for registration. Beginning this July, the sister and brother will return together to the mountains of Sichuan for a two-week residency teaching village children to paint, with the works auctioned at Chengdu's Luxelakes Children's Centre — twice every year (July and January) as a continuing operation. This document weaves these four real-world lines into a single 18-month execution map.</p>
+
+  <div class="grid-3" style="margin-top:22px">
+    <div class="card">
+      <div class="stat">55–100<span class="unit zh-only">萬元</span><span class="unit en-only">RMB 10K</span></div>
+      <div class="label zh-only">SNOW LEOPARD BP V2.1 · 雪豹戰略總投入</div>
+      <div class="label en-only">SNOW LEOPARD BP V2.1 · Total Investment</div>
+      <p class="small zh-only" style="margin-top:8px">由四川天府中碳出資。雙路徑：WCS 戰略捐贈 + 聯合署名報告。</p>
+      <p class="small en-only" style="margin-top:8px">Underwritten by Sichuan Tianfu Carbon. Dual-path: WCS strategic donation + co-authored research report.</p>
+    </div>
+    <div class="card">
+      <div class="stat">2026.10<span class="unit zh-only">全容量併網</span><span class="unit en-only">Full grid-connection</span></div>
+      <div class="label zh-only">SICHUAN STORAGE · 四川 2×100MW / 200MWh 儲能</div>
+      <div class="label en-only">SICHUAN STORAGE · 2 × 100MW / 200MWh BESS</div>
+      <p class="small zh-only" style="margin-top:8px">集團自建自運營，預計 2026 年 10 月全容量併網投運。</p>
+      <p class="small en-only" style="margin-top:8px">Group-built and operated. Full grid-connection expected October 2026.</p>
+    </div>
+    <div class="card">
+      <div class="stat">2 × 2 <span class="unit zh-only">週 / 年 · 持續運營</span><span class="unit en-only">weeks / year · ongoing</span></div>
+      <div class="label zh-only">SICHUAN PAINTING · 四川山區畫畫公益</div>
+      <div class="label en-only">SICHUAN PAINTING · Children's Art Initiative</div>
+      <p class="small zh-only" style="margin-top:8px">每年 7 月與 1 月各駐紮 2 週，覆蓋 30–50 個山區家庭，每幅畫 10–100 元義賣，款項 100% 反哺。</p>
+      <p class="small en-only" style="margin-top:8px">Two-week residencies each July and January, reaching 30–50 mountain families per cycle. Each work auctioned at RMB 10–100, with 100% of proceeds returned to the families.</p>
+    </div>
+  </div>
+
+  <div class="quote">
+    The lines do not dictate. The cards do not command. The time does not condemn. They simply illuminate.
+    <div style="font-family:Inter,sans-serif;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.04em">— rbwmeta.com</div>
+  </div>
+</section>
+
+<!-- 03 · ORIGIN -->
+<section>
+  <div class="sec-num">03 · ORIGIN</div>
+  <h2 class="zh-only">初衷：姐弟在同一張桌前坐下來的那天 <span class="en">How the Two of Us Came to This, Together</span></h2>
+  <h2 class="en-only">Origin: The Day the Two of Us Sat Down at the Same Table</h2>
+  <p class="lead zh-only">這件事的起點不在董事會，也不在任何一份計劃書裡。它起於一次再普通不過的家庭通話——關於弟弟在加州的暑假怎麼安排，關於姐姐在四川剛落地的儲能項目，關於我們是不是該一起做點什麼。</p>
+  <p class="lead en-only">This did not begin in a boardroom, nor in any planning document. It began with an ordinary family phone call — about how the brother would spend his summer in California, about the storage project the sister had just brought online in Sichuan, about whether the two of us should perhaps do something together.</p>
+
+  <div class="origin">
+    <p class="zh-only">姐姐 30 歲，已在新能源行業裡跑了八年。弟弟 16 歲，在加州讀高中，對塔羅、對 AI、對東西方為什麼想問同一些問題感興趣。我們發現：產業的這一端，姐姐能調動真實的資金、團隊與政府關係；文化與技術的那一端，弟弟能把一套東方的東西用世界聽得懂的語言重新講出來。我們各自缺的那一塊，恰好是對方手裡有的。</p>
+    <p class="en-only">The sister is 30, eight years deep into the new-energy industry. The brother is 16, attending high school in California, drawn to Tarot, to AI, and to the question of why East and West so often arrive at the same questions by different paths. We came to a clear realisation: on the industrial side, the sister can mobilise real capital, real teams, real government relationships; on the cultural and technical side, the brother can take something deeply Eastern and re-tell it in a register the world can hear. What each of us was missing, the other already held.</p>
+
+    <p class="zh-only">於是我們決定不再分開做事。雪豹保護是姐姐主導的集團旗艦戰略，弟弟以青年觀察員身份參與；RBW Studio 是我們聯合創立的文化引擎，用最平民的價格給此刻焦慮的人遞上一份溫暖；四川山區的畫畫公益，是我們一起回到童年的家鄉，把熱錢換成山裡孩子的畫筆。三件事互不替代，但共用同一個底色：<strong>把中國西南、把香港、把世界，重新放在同一張桌前。</strong></p>
+    <p class="en-only">So we decided to stop working in parallel. Snow leopard conservation is the Group's flagship strategy, led by the sister, with the brother joining as a youth observer. RBW Studio is the cultural engine we co-founded — designed to offer warmth, at the most affordable price possible, to the anxious of our time. The painting initiative in rural Sichuan is the two of us returning to the home of our childhood, converting capital into paintbrushes in mountain children's hands. Three projects, none a substitute for the others, all sharing one ground: <strong>to place southwestern China, Hong Kong, and the wider world back at the same table.</strong></p>
+
+    <div class="pair">
+      <div class="voice">
+        <div class="who">B.W · <span class="zh-only">姐姐</span><span class="en-only">Sister</span></div>
+        <p class="zh-only" style="font-style:italic;color:var(--ink)">"我的基本盤是新能源、是碳匯、是青年企業家事務。但我希望這份基本盤能向外延伸——延伸到生態，延伸到文化，延伸到那些此刻睡不著、想找一個人說一句話的人。"</p>
+        <p class="en-only" style="font-style:italic;color:var(--ink)">"My foundation is new energy, carbon assets, and youth-entrepreneur affairs. But I want that foundation to reach outward — into ecology, into culture, and toward those who can't sleep tonight and just want someone to say a single sentence to them."</p>
+      </div>
+      <div class="voice r">
+        <div class="who">R.W · <span class="zh-only">弟弟</span><span class="en-only">Brother</span></div>
+        <p class="zh-only" style="font-style:italic;color:var(--ink)">"我不是被姐姐帶進這件事的。我是和她一起想到的。技術、塔羅、雙語表達是我能拿出來的東西，山裡的孩子和雪豹的山，是我們倆一起要回去的地方。"</p>
+        <p class="en-only" style="font-style:italic;color:var(--ink)">"I wasn't brought into this by my sister. We thought of it together. Technology, Tarot, bilingual writing — those are what I can bring to the table. The children of the mountains, and the mountains the snow leopards walk — those are places the two of us are returning to, together."</p>
+      </div>
+    </div>
+
+    <p class="zh-only" style="margin-top:18px">我們的願景樸素：在新能源產業之外，留下一份結果無關也站得住的長期資產——可被審計的公益履歷、可被引用的科研數據、可被翻譯的文化品牌、可被孩子們記住的一個夏天，以及可被一個普通人用一杯奶茶錢換來的一次溫柔回應。各自的長期理想抱負，姐姐在青年社會事務這條線上、弟弟在未來高等教育這條線上，<strong>都會自然兌現，不必在這份文件裡點名</strong>。</p>
+    <p class="en-only" style="margin-top:18px">Our vision is modest: beyond the new-energy business, to leave behind a long-term asset that holds its ground regardless of any single outcome — an auditable record of charitable work, citable research data, a translatable cultural brand, a summer the children will remember, and one gentle reply a stranger can afford for the price of a cup of tea. Whatever longer-term aspirations each of us holds — the sister along the line of youth and social affairs, the brother along the line of future higher education — <strong>will arrive in their own time, and need not be named in this document.</strong></p>
+  </div>
+</section>
+
+<!-- 04 · TWO FOUNDERS -->
+<section>
+  <div class="sec-num">04 · THE TWO FOUNDERS</div>
+  <h2 class="zh-only">姐姐與弟弟 <span class="en">Principal &amp; Co-Initiator</span></h2>
+  <h2 class="en-only">Sister &amp; Brother — Principal and Co-Initiator</h2>
+  <div class="founders">
+    <div class="founder">
+      <div class="role zh-only">PRINCIPAL · 第一主角</div>
+      <div class="role en-only">PRINCIPAL</div>
+      <h3>B.W</h3>
+      <div class="sub zh-only">姐姐 · 30 歲 · 香港籍 · 8 年海外留學經歷</div>
+      <div class="sub en-only">Sister · 30 · Hong Kong · 8 years studying overseas</div>
+      <ul class="zh-only">
+        <li><strong>香港中盈頂耀新能源投資集團</strong> 董事長</li>
+        <li><strong>香港青年內地就業創業聯合會</strong> 會長（2019 年於中聯辦指導下成立，非營利機構）</li>
+        <li><strong>四川天府中碳環保科技有限公司</strong>——集團內地碳匯事業部唯一總部級載體</li>
+        <li><strong>RBW Studio</strong> 聯合創始人 · 中文文化端 · 紫微斗數 / 小六壬研習者</li>
+      </ul>
+      <ul class="en-only">
+        <li>Chairman, <strong>Hong Kong Zhongying Dingyao New Energy Investment Group</strong></li>
+        <li>President, <strong>Hong Kong Youth Mainland Employment &amp; Entrepreneurship Association</strong> (a non-profit established in 2019 under the guidance of the Liaison Office)</li>
+        <li><strong>Sichuan Tianfu Carbon Environmental Technology Co., Ltd.</strong> — the Group's sole headquarters-level carbon assets vehicle on the mainland</li>
+        <li>Co-founder, <strong>RBW Studio</strong> · Chinese cultural lead · practitioner of Purple Star Astrology and Xiao Liu Ren</li>
+      </ul>
+      <p class="small zh-only" style="margin-top:8px">在每個關鍵節點，B.W 的雙重身份同時成立：<strong>集團董事長 + 香港青年內地就業創業聯合會會長</strong>。</p>
+      <p class="small en-only" style="margin-top:8px">At every key moment, B.W's two roles hold simultaneously: <strong>Group Chairman + President of the Hong Kong Youth Mainland Employment &amp; Entrepreneurship Association.</strong></p>
+    </div>
+    <div class="founder r">
+      <div class="role zh-only">CO-INITIATOR · 共同發起人</div>
+      <div class="role en-only">CO-INITIATOR</div>
+      <h3>R.W</h3>
+      <div class="sub zh-only">弟弟 · 16 歲 · 2010.01 出生於香港</div>
+      <div class="sub en-only">Brother · 16 · born January 2010 in Hong Kong</div>
+      <ul class="zh-only">
+        <li>0–5 歲在四川生活（2010–2015）——核心情感錨點</li>
+        <li>香港讀書（2015–2019）→ 美國加州讀高中（2019 至今）</li>
+        <li>2028 年 9 月入讀大學</li>
+        <li><strong>RBW Studio</strong> 聯合創始人 · 技術 + 西方文化端 · 塔羅研習者</li>
+      </ul>
+      <ul class="en-only">
+        <li>Lived in Sichuan from age 0 to 5 (2010–2015) — the core emotional anchor</li>
+        <li>Schooled in Hong Kong (2015–2019), then high school in California (2019–present)</li>
+        <li>University matriculation: September 2028</li>
+        <li>Co-founder, <strong>RBW Studio</strong> · technology and Western cultural lead · Tarot practitioner</li>
+      </ul>
+      <p class="small zh-only" style="margin-top:8px">公開材料統一以"項目共同發起人 / 姐姐的弟弟 / R.W"指代，不使用真名。他是合作者與共同發起人，不是受益人。</p>
+      <p class="small en-only" style="margin-top:8px">In all public-facing material he is referred to consistently as "project co-initiator / the sister's brother / R.W" — never by his given name. He is a collaborator and co-initiator, not a beneficiary.</p>
+    </div>
+  </div>
+</section>
+
 <!-- SECTION_05_PLACEHOLDER -->
 <!-- SECTION_06_PLACEHOLDER -->
 <!-- SECTION_07_PLACEHOLDER -->
