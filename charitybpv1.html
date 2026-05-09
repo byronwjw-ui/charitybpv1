@@ -60,6 +60,7 @@
 
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .grid-6{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px}
   .card.warm{background:var(--paper-warm)}
@@ -137,7 +138,6 @@
     padding:14px 20px;border-radius:8px;text-align:center;color:var(--deep-blue);
     font-family:Georgia,serif;font-style:italic;}
 
-  /* RBW MISSION CARD (new) */
   .mission{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;margin-top:16px;
     border-left:4px solid var(--jade)}
   .mission .pricetag{display:inline-block;background:var(--deep-blue);color:var(--gold);
@@ -148,6 +148,29 @@
   .mission-grid .m{background:var(--paper-warm);border:1px solid var(--line);border-radius:8px;padding:14px}
   .mission-grid .m h4{margin:0 0 6px;color:var(--deep-blue);text-transform:none;letter-spacing:0;font-size:14px;font-family:Georgia,serif}
   .mission-grid .m p{font-size:13px;margin:0;color:var(--ink-soft)}
+
+  /* PAINTING IMPACT METRICS */
+  .impact{background:linear-gradient(180deg,#fdf8e8 0%, var(--paper-warm) 100%);
+    border:1px solid var(--line);border-radius:10px;padding:24px;margin-top:16px;
+    border-left:4px solid var(--gold)}
+  .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+  .impact-grid .m{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;text-align:center}
+  .impact-grid .m .num{font-family:Georgia,serif;font-size:26px;color:var(--deep-blue);font-weight:700;line-height:1.1}
+  .impact-grid .m .num .u{font-size:12px;color:var(--muted);font-weight:400;margin-left:3px;font-family:Inter,sans-serif}
+  .impact-grid .m .lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  .impact-grid .m .note{font-size:12px;color:var(--ink-soft);margin-top:8px;line-height:1.5}
+  .calc{background:#fff;border:1px dashed var(--line);border-radius:8px;padding:14px 16px;margin-top:14px;
+    font-size:12.5px;color:var(--muted);font-family:Georgia,serif;font-style:italic}
+  .calc strong{color:var(--deep-blue);font-style:normal}
+
+  /* CADENCE TWO-SEASON */
+  .cadence{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .season{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;
+    border-top:3px solid var(--gold)}
+  .season.winter{border-top-color:var(--jade)}
+  .season .when{font-family:Georgia,serif;color:var(--gold);font-size:13px;letter-spacing:.1em}
+  .season.winter .when{color:var(--jade)}
+  .season h4{margin:6px 0 6px;color:var(--deep-blue);text-transform:none;letter-spacing:0;font-size:16px;font-family:Georgia,serif}
 
   .founders{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
   .founder{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;border-top:4px solid var(--deep-blue)}
@@ -178,13 +201,14 @@
   footer .gold{color:var(--gold)}
 
   @media (max-width: 900px){
-    .grid-2,.grid-3,.grid-6,.matrix,.systems,.paths,.founders,.origin .pair,.mission-grid{grid-template-columns:1fr}
+    .grid-2,.grid-3,.grid-6,.matrix,.systems,.paths,.founders,.origin .pair,.mission-grid,.cadence{grid-template-columns:1fr}
+    .impact-grid,.grid-4{grid-template-columns:1fr 1fr}
     .tl-stages,.tl-rows{grid-template-columns:1fr 1fr 1fr}
     .group-hero{grid-template-columns:1fr}
     .cover h1{font-size:40px}
     .rm-row{grid-template-columns:110px 1fr}
   }
-  @media (max-width: 560px){.tl-stages,.tl-rows,.names{grid-template-columns:1fr}}
+  @media (max-width: 560px){.tl-stages,.tl-rows,.names,.impact-grid,.grid-4{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -205,7 +229,7 @@
 <section>
   <div class="sec-num">02 · EXECUTIVE SUMMARY</div>
   <h2>執行摘要 <span class="en">A One-Page Read</span></h2>
-  <p class="lead">2026 年 5 月。香港中盈頂耀新能源投資集團主導的雪豹保護戰略項目（V2.1）已成稿待啟，集團內地碳匯事業部唯一總部級載體——四川天府中碳——將承接執行。RBW Studio 已上線，新加坡公司即將完成註冊。今年暑假，姐弟將共同回到四川山區執行畫畫公益並在成都麓湖義賣。本文件把這四條真實主線縫成同一張 18 個月的執行地圖。</p>
+  <p class="lead">2026 年 5 月。香港中盈頂耀新能源投資集團主導的雪豹保護戰略項目（V2.1）已成稿待啟，集團內地碳匯事業部唯一總部級載體——四川天府中碳——將承接執行。RBW Studio 已上線，新加坡公司即將完成註冊。今年 7 月起，姐弟將共同回到四川山區駐紮兩週執行畫畫公益並在成都麓湖義賣，每年 2 次（7 月、1 月）持續性運營。本文件把這四條真實主線縫成同一張 18 個月的執行地圖。</p>
   <div class="grid-3" style="margin-top:22px">
     <div class="card">
       <div class="stat">55–100<span class="unit">萬元</span></div>
@@ -218,9 +242,9 @@
       <p class="small" style="margin-top:8px">集團自建自運營，預計 2026 年 10 月全容量併網投運。</p>
     </div>
     <div class="card">
-      <div class="stat">18<span class="unit">個月行動地圖</span></div>
-      <div class="label">2026.05 → 2027.10</div>
-      <p class="small" style="margin-top:8px">六階段時間線將集團戰略動作、姐弟雙人創業節奏、家鄉公益執行縫成一條可審計的路線。</p>
+      <div class="stat">2 × 2 週<span class="unit">/ 年 · 持續性運營</span></div>
+      <div class="label">SICHUAN PAINTING · 四川山區畫畫公益</div>
+      <p class="small" style="margin-top:8px">每年 7 月與 1 月各駐紮 2 週，覆蓋 30–50 個山區家庭，每幅畫 10–100 元義賣，款項 100% 反哺。</p>
     </div>
   </div>
 
@@ -432,11 +456,11 @@
     </div>
     <div class="tl-rows" style="margin-top:12px">
       <div class="tl-row family"><div class="h">FAMILY</div>RBW 新加坡公司 6 月初註冊完成</div>
-      <div class="tl-row family"><div class="h">FAMILY</div>暑期畫畫公益啟動</div>
-      <div class="tl-row family"><div class="h">FAMILY</div>R.W 暑假回川：青年觀察員 + 畫畫公益 + 麓湖義賣；四川 2×100MW 儲能 10 月全容量併網</div>
-      <div class="tl-row family"><div class="h">FAMILY</div>RBW 衍生青少年雪豹科普內容啟動</div>
+      <div class="tl-row family"><div class="h">FAMILY</div>畫畫公益首期啟動（7 月駐紮 2 週）</div>
+      <div class="tl-row family"><div class="h">FAMILY</div>R.W 暑假回川：青年觀察員 + 畫畫公益 + 麓湖義賣；四川 2×100MW 儲能 10 月併網</div>
+      <div class="tl-row family"><div class="h">FAMILY</div>畫畫公益冬季二期（2027.01 駐紮 2 週）+ RBW 雪豹科普內容啟動</div>
       <div class="tl-row family"><div class="h">FAMILY</div>RBW 青少年科普內容上線</div>
-      <div class="tl-row family"><div class="h">FAMILY</div>家族敘事長期資產沉澱</div>
+      <div class="tl-row family"><div class="h">FAMILY</div>畫畫公益夏季三期（2027.07）+ 家族敘事長期沉澱</div>
     </div>
   </div>
 </section>
@@ -530,28 +554,77 @@
 <section>
   <div class="sec-num">09 · CHARITY MATRIX</div>
   <h2>公益矩陣 <span class="en">Three Channels · One Coherent Story</span></h2>
-  <p class="lead">三條互相咬合的執行線：路徑一 WCS 防護欄、路徑二聯合報告、四川山區畫畫義賣。共同構成集團 ESG / CSR 閉環。</p>
+  <p class="lead">三條互相咬合的執行線：路徑一 WCS 防護欄、路徑二聯合報告、四川山區畫畫義賣。共同構成集團 ESG / CSR 閉環。其中畫畫公益是<strong>持續性運營項目，而非一次性活動</strong>。</p>
 
   <h3>四川山區畫畫公益 + 麓湖兒童中心義賣</h3>
   <div class="card warm">
     <div class="grid-2">
       <div>
-        <h4>執行時間</h4><p>2026 年 7–8 月（暑假）</p>
-        <h4>執行地點</h4><p>四川山區貧困地區 → 成都麓湖兒童中心</p>
-        <h4>執行主體</h4><p>B.W &amp; R.W 聯合，RBW Studio 名義參與。</p>
+        <h4>運營節奏</h4>
+        <p><strong>每年 2 期，持續性執行：</strong>每年 7 月（暑期）、每年 1 月（寒假）各駐紮 2 週。<br/>首期：<strong>2026 年 7 月</strong> 啟動。</p>
+        <h4>執行地點</h4>
+        <p>四川山區貧困地區（駐紮 2 週）→ 成都麓湖兒童中心（義賣）</p>
+        <h4>執行主體</h4>
+        <p>B.W &amp; R.W 聯合，邀請<strong>專業高水準美術老師團隊</strong>同行；RBW Studio 名義參與，姐弟與團隊全程<strong>不收取任何費用</strong>。</p>
       </div>
       <div>
         <h4>執行模式</h4>
         <ul>
-          <li>姐弟二人 + 邀請的畫畫老師團隊進入四川山區</li>
-          <li>教貧困家庭孩子畫畫</li>
-          <li>畫帶回成都麓湖兒童中心公益義賣</li>
-          <li>組織熱心公益群體全部買下</li>
-          <li>每幅畫款項 <strong>100% 反哺貧困家庭</strong></li>
-          <li>姐弟與團隊<strong>不收取任何費用</strong></li>
+          <li>姐弟二人 + 專業美術老師團隊進入四川山區，<strong>連續駐紮 2 週</strong></li>
+          <li>每天利用孩子們的空餘時間教畫——尊重課業節奏，不打擾日常生活</li>
+          <li>孩子們的畫帶回成都麓湖兒童中心公益義賣</li>
+          <li>每幅畫定價 <strong>10–100 元</strong>（依尺寸 / 用紙 / 完成度）</li>
+          <li>組織熱心公益群體全部買下，款項 <strong>100% 反哺貧困家庭</strong></li>
           <li>媒體曝光由專業 PR 統一口徑</li>
         </ul>
+        <p class="small" style="margin-top:10px"><strong>為什麼是孩子的畫？</strong>小孩子的畫，大人模仿不了——童真、率性、未被規訓的觀看方式，本身就是最稀缺的內容。我們不修改、不"提升"，只把它鄭重地接到桌前。</p>
       </div>
+    </div>
+  </div>
+
+  <!-- IMPACT METRICS -->
+  <h3>單期規模與測算 · 每駐紮 2 週</h3>
+  <div class="impact">
+    <p style="margin:0 0 4px"><strong>每駐紮 2 週的單期影響估算（保守口徑）。</strong>每年兩期累積，三年滾動可形成完整的鄉村兒童創作生態樣本。</p>
+    <div class="impact-grid">
+      <div class="m">
+        <div class="num">30–50<span class="u">名</span></div>
+        <div class="lab">山區兒童 · 直接受教</div>
+        <div class="note">每期覆蓋 30–50 名 6–14 歲山區孩子，每人深度參與兩週創作。</div>
+      </div>
+      <div class="m">
+        <div class="num">30–50<span class="u">戶</span></div>
+        <div class="lab">貧困家庭 · 直接增收</div>
+        <div class="note">義賣款項 100% 反哺對應家庭，覆蓋 30–50 戶。</div>
+      </div>
+      <div class="m">
+        <div class="num">120–250<span class="u">幅</span></div>
+        <div class="lab">畫作產出 · 單期</div>
+        <div class="note">按每孩 4–5 幅完成度成熟作品估算，單期可進義賣的有效畫作 120–250 幅。</div>
+      </div>
+      <div class="m">
+        <div class="num">¥1,200–¥25,000<span class="u">/ 期</span></div>
+        <div class="lab">義賣總額 · 單期區間</div>
+        <div class="note">每幅 10–100 元 × 120–250 幅，款項 100% 進入家庭。<strong>測算值</strong>，實際以義賣完成數據為準。</div>
+      </div>
+    </div>
+    <div class="calc">
+      <strong>計算口徑：</strong>30–50 名孩子 × 4–5 幅/人 = 120–250 幅有效畫作；每幅 10–100 元義賣價 → 單期反哺金額 ¥1,200–¥25,000；每年 2 期 × 持續滾動 → 三年累計可惠及 <strong>180–300 名兒童 / 180–300 戶家庭</strong>，總畫作產出 <strong>720–1,500 幅</strong>。
+    </div>
+  </div>
+
+  <!-- TWO-SEASON CADENCE -->
+  <h3>兩季節奏</h3>
+  <div class="cadence">
+    <div class="season">
+      <div class="when">SUMMER · 每年 7 月</div>
+      <h4>暑期主場 · 駐紮 2 週</h4>
+      <p class="small" style="margin:0">姐弟可同時在川（弟弟暑假回國），與雪豹 BP Stage 3 媒體首輪傳播窗口重合。畫材以水彩 / 水粉為主，戶外寫生比例高。<strong>2026.07 為首期。</strong></p>
+    </div>
+    <div class="season winter">
+      <div class="when">WINTER · 每年 1 月</div>
+      <h4>寒假持續期 · 駐紮 2 週</h4>
+      <p class="small" style="margin:0">與山區孩子寒假同步，室內創作為主，畫材以蠟筆 / 彩鉛 / 紙本為主。<strong>2027.01 為首期冬季場</strong>，與雪豹報告中期成果交付窗口重合。</p>
     </div>
   </div>
 
@@ -568,7 +641,7 @@
 <section style="background:var(--paper-warm);margin:0 -28px;padding:64px 28px">
   <div class="sec-num">10 · SICHUAN</div>
   <h2>四川：把一切縫在一起的那根針 <span class="en">The Needle That Stitches It All Together</span></h2>
-  <p class="lead">四川不是任意一個外部地點。它是把這個家族的四條叙事縫成同一塊布的那根針——弟弟的童年在這裡，集團的碳匯總部設在這裡，雪豹的棲息地分佈在這裡，今年暑假的畫畫公益也在這裡執行。</p>
+  <p class="lead">四川不是任意一個外部地點。它是把這個家族的四條叙事縫成同一塊布的那根針——弟弟的童年在這裡，集團的碳匯總部設在這裡，雪豹的棲息地分佈在這裡，每年兩期的畫畫公益也在這裡執行。</p>
 
   <div class="grid-2" style="margin-top:20px">
     <div class="card">
@@ -585,7 +658,7 @@
     </div>
     <div class="card">
       <h4>公益執行地</h4>
-      <p>2026 年 7–8 月，四川山區是畫畫公益執行地，成都麓湖兒童中心是義賣承載地。山裡的孩子用畫筆寄出第一份產出，姐弟在桌的這一端把它接住。</p>
+      <p>每年 7 月與 1 月，姐弟與專業美術老師駐紮四川山區 2 週，成都麓湖兒童中心承載義賣。從 2026.07 起，每年 2 期，持續滾動。</p>
     </div>
   </div>
 </section>
@@ -604,7 +677,7 @@
         <li><strong>跨界資本敘事：</strong>RBW 新加坡公司是集團首個 C 端 / 文化 / 國際市場實體，對未來引入戰投是稀缺加分項。</li>
         <li><strong>社會事務履歷：</strong>香港青年內地就業創業聯合會會長身份在生態公益與青年文化雙線兌現（克制呈現）。</li>
         <li><strong>家族 IP 沉澱：</strong>創始家族長期文化資產，跨代延續性。</li>
-        <li><strong>ESG / CSR 閉環：</strong>產業 + 碳匯 + 生物多樣性 + 公益四環打通。</li>
+        <li><strong>ESG / CSR 閉環：</strong>產業 + 碳匯 + 生物多樣性 + 持續性兒童公益四環打通。</li>
       </ul>
     </div>
     <div class="col">
@@ -622,9 +695,9 @@
       <ul>
         <li><strong>真實田野經歷：</strong>以青年觀察員身份參與 WCS 防護欄交付節點。</li>
         <li><strong>創作產出：</strong>RBW 衍生青少年雪豹科普內容，作為共同發起人的署名作品。</li>
-        <li><strong>反哺家鄉：</strong>回到 0–5 歲的生活之地參與畫畫公益與義賣。</li>
+        <li><strong>反哺家鄉：</strong>每年 2 期回到 0–5 歲的生活之地參與畫畫公益與義賣，三年滾動覆蓋 180–300 名孩子。</li>
         <li><strong>跨學科視野：</strong>玄學 + 生態 + 公益 + 心理疏導四條線互相印證，作為長期成長路徑的一部分，為其未來高等教育積累實質履歷。</li>
-        <li><strong>持續性項目：</strong>長期項目而非一次性活動。</li>
+        <li><strong>持續性項目：</strong>每年 7 月 + 1 月固定節奏，長期可審計，非一次性活動。</li>
       </ul>
     </div>
   </div>
@@ -644,21 +717,23 @@
       <tr><td>CCER 政策變化</td><td>同步跟蹤 <strong>VCS 與生物多樣性信用市場</strong>。</td></tr>
       <tr><td>資金週期延長</td><td>分階段付款 + <strong>里程碑制</strong>。</td></tr>
       <tr><td>媒體傳播失控</td><td>專業 PR <strong>統一口徑</strong>。</td></tr>
-      <tr><td>合規與公益身份審查</td><td>採用 <strong>WCS 在華合規捐贈通道</strong>。</td></tr>
+      <tr><td>合規與公益身份審查</td><td>採用 <strong>WCS 在華合規捐贈通道</strong>；畫畫義賣款項全額透明反哺，可審計可追溯。</td></tr>
     </tbody>
   </table>
 
   <h3>18 個月行動地圖</h3>
   <div class="roadmap">
-    <div class="rm-row"><div class="rm-when">2026.05</div><div class="rm-what">雪豹 BP V2.1 內部立項；接觸 WCS 與國內科研機構；RBW 新加坡公司註冊提交。</div></div>
-    <div class="rm-row"><div class="rm-when">2026.06</div><div class="rm-what">RBW 新加坡公司註冊完成；WCS 戰略捐贈協議談判；報告委託意向書。</div></div>
-    <div class="rm-row"><div class="rm-when">2026.07</div><div class="rm-what">WCS 戰略捐贈 + 報告委託協議簽署；暑期畫畫公益啟動。</div></div>
-    <div class="rm-row"><div class="rm-when">2026.08</div><div class="rm-what">畫畫公益持續執行；R.W 以青年觀察員身份參與 WCS 防護欄交付節點；麓湖義賣籌備。</div></div>
-    <div class="rm-row"><div class="rm-when">2026.09</div><div class="rm-what">麓湖義賣執行；報告野外調研啟動；媒體首輪傳播；款項 100% 反哺。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.05</div><div class="rm-what">雪豹 BP V2.1 內部立項；接觸 WCS 與國內科研機構；RBW 新加坡公司註冊提交；畫畫公益駐點選址 + 美術老師團隊組建。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.06</div><div class="rm-what">RBW 新加坡公司註冊完成；WCS 戰略捐贈協議談判；報告委託意向書；畫畫公益首期物資採購（畫材 / 駐紮）。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.07</div><div class="rm-what">WCS 戰略捐贈 + 報告委託協議簽署；<strong>畫畫公益首期駐紮 2 週</strong>，覆蓋 30–50 名山區兒童。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.08</div><div class="rm-what">畫作整理 / 裝裱 / 籌備義賣；R.W 以青年觀察員身份參與 WCS 防護欄交付節點；麓湖義賣籌備。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.09</div><div class="rm-what">麓湖義賣執行（單期 ¥1,200–¥25,000，款項 100% 反哺）；報告野外調研啟動；媒體首輪傳播。</div></div>
     <div class="rm-row"><div class="rm-when">2026.10</div><div class="rm-what">四川 2×100MW / 200MWh 儲能全容量併網投運；WCS 防護欄持續落地；報告中期數據回收。</div></div>
-    <div class="rm-row"><div class="rm-when">2026.11–2027.01</div><div class="rm-what">報告中期成果交付；RBW 衍生青少年雪豹科普內容啟動。</div></div>
-    <div class="rm-row"><div class="rm-when">2027.02–04</div><div class="rm-what">雪豹聯合報告發布會；RBW 青少年科普內容上線；媒體第二輪傳播。</div></div>
-    <div class="rm-row"><div class="rm-when">2027.05–10</div><div class="rm-what">長期路徑鎖定（CCER / VCS 開發或結果 B 戰略轉向）；與 WCS 續簽；家族敘事長期資產沉澱。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.11–12</div><div class="rm-what">畫畫公益冬季場物資採購；雪豹報告中期成果交付準備；RBW 衍生青少年雪豹科普內容啟動。</div></div>
+    <div class="rm-row"><div class="rm-when">2027.01</div><div class="rm-what"><strong>畫畫公益冬季二期駐紮 2 週</strong>，再覆蓋 30–50 名山區兒童；雪豹報告中期成果交付。</div></div>
+    <div class="rm-row"><div class="rm-when">2027.02–04</div><div class="rm-what">麓湖冬季義賣執行；雪豹聯合報告發布會；RBW 青少年科普內容上線；媒體第二輪傳播。</div></div>
+    <div class="rm-row"><div class="rm-when">2027.05–06</div><div class="rm-what">畫畫公益夏季三期物資採購；長期路徑對接（CCER / VCS 開發或結果 B 戰略轉向）。</div></div>
+    <div class="rm-row"><div class="rm-when">2027.07–10</div><div class="rm-what"><strong>畫畫公益夏季三期駐紮 2 週</strong>；與 WCS 續簽下一週期；家族敘事長期資產沉澱：累計覆蓋 90–150 名兒童 / 90–150 戶家庭。</div></div>
   </div>
 </section>
 
@@ -666,14 +741,14 @@
 <section>
   <div class="sec-num">13 · CLOSING</div>
   <h2>結語與決策提示 <span class="en">A Note Before the Page Closes</span></h2>
-  <p class="lead">這不是一份溫情家族故事，也不是一次性的企業捐贈。它是以集團產業為基本盤、以雪豹戰略為旗艦項目、以 RBW Studio 為跨界縱深、以家鄉公益為情感錨點，由 B.W 主導、R.W 共同發起的 18 個月戰略執行文件。可被內部決策者、合作機構、媒體三類受眾同時閱讀。</p>
+  <p class="lead">這不是一份溫情家族故事，也不是一次性的企業捐贈。它是以集團產業為基本盤、以雪豹戰略為旗艦項目、以 RBW Studio 為跨界縱深、以每年兩期的家鄉畫畫公益為情感錨點，由 B.W 主導、R.W 共同發起的 18 個月戰略執行文件。可被內部決策者、合作機構、媒體三類受眾同時閱讀。</p>
 
   <div class="decision">
     <h3>決策提示</h3>
     <ul>
       <li><strong>啟動條件：</strong>2026.06 內完成 WCS 戰略捐贈協議 + 報告委託協議簽署，BP V2.1 正式生效。</li>
       <li><strong>付款節奏：</strong>55–100 萬元按 6 階段里程碑分批支付，由四川天府中碳執行。</li>
-      <li><strong>公關口徑：</strong>由集團公關事業部統一審核；姐弟雙人首次媒體露出在 Stage 3（2026.08–10）。</li>
+      <li><strong>畫畫公益持續性：</strong>每年 7 月 + 1 月各駐紮 2 週，每期覆蓋 30–50 名山區兒童 / 家庭，每幅畫 10–100 元義賣 100% 反哺，<strong>非一次性活動</strong>。</li>
       <li><strong>關鍵節點同月：</strong>2026.10 四川 2×100MW 儲能全容量併網 + WCS 防護欄落地，是雙線交匯的關鍵月。</li>
       <li><strong>RBW 使命驗證：</strong>3 元/條起的平民定價在 6 個月內產生首批可審計用戶數據，為跨界資本敘事提供真實底材。</li>
     </ul>
