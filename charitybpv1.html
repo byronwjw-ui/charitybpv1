@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RETURN｜回到桌前 — 一個香港家族的雙向回鄉敘事</title>
+<style>
+  :root{
+    --deep-blue:#0A2F44;
+    --gold:#C9A03D;
+    --jade:#1A7F62;
+    --paper:#F5EFE0;
+    --paper-warm:#EFE6D2;
+    --ink:#1B1B1B;
+    --ink-soft:#3a3a3a;
+    --muted:#6b6457;
+    --line:#d9cdb1;
+    --candle:radial-gradient(ellipse at top, rgba(201,160,61,0.18), rgba(245,239,224,0) 60%);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:Inter,Roboto,system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.75;font-size:16px}
+  .serif{font-family:Georgia,"Source Han Serif SC","Songti SC","SimSun",serif}
+  a{color:var(--deep-blue)}
+  /* COVER */
+  .cover{
+    min-height:100vh;
+    background:
+      var(--candle),
+      linear-gradient(180deg, #0A2F44 0%, #0c3a52 60%, #0A2F44 100%);
+    color:#f6efd9;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:80px 24px;text-align:center;position:relative;overflow:hidden;
+  }
+  .cover::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(201,160,61,0.10), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(26,127,98,0.10), transparent 45%);
+    pointer-events:none;
+  }
+  .cover .eyebrow{letter-spacing:.4em;font-size:12px;color:var(--gold);margin-bottom:28px}
+  .cover h1{font-family:Georgia,serif;font-size:64px;line-height:1.1;margin:0 0 16px;letter-spacing:.02em}
+  .cover h1 .bar{color:var(--gold)}
+  .cover .zh-sub{font-size:22px;color:#e8dfc4;margin:0 0 28px;font-weight:300}
+  .cover .en-sub{font-family:Georgia,serif;font-style:italic;font-size:18px;color:#cfc69f;max-width:780px;margin:0 auto;line-height:1.6}
+  .cover .meta{margin-top:56px;font-size:13px;color:#9a9171;letter-spacing:.2em}
+  .cover .ornament{margin:36px auto 0;width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+  /* LAYOUT */
+  main{max-width:1180px;margin:0 auto;padding:0 28px}
+  section{padding:80px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  .sec-num{font-family:Georgia,serif;color:var(--gold);letter-spacing:.3em;font-size:12px;margin-bottom:14px}
+  h2{font-family:Georgia,serif;font-size:34px;line-height:1.25;color:var(--deep-blue);margin:0 0 8px;letter-spacing:.01em}
+  h2 .en{display:block;font-style:italic;font-size:16px;color:var(--muted);font-weight:400;margin-top:6px;letter-spacing:.04em}
+  h3{font-family:Georgia,serif;font-size:22px;color:var(--deep-blue);margin:32px 0 12px}
+  h4{font-size:15px;text-transform:uppercase;letter-spacing:.18em;color:var(--jade);margin:24px 0 10px}
+  p{margin:0 0 14px;color:var(--ink-soft)}
+  .lead{font-size:18px;color:var(--ink);max-width:880px}
+  ul{padding-left:20px;margin:8px 0 16px}
+  li{margin-bottom:6px;color:var(--ink-soft)}
+  .quote{
+    font-family:Georgia,serif;font-style:italic;font-size:22px;line-height:1.6;
+    color:var(--deep-blue);border-left:3px solid var(--gold);
+    padding:14px 22px;margin:28px 0;background:rgba(201,160,61,0.06);
+  }
+  .small{font-size:13px;color:var(--muted)}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:48px 0}
+
+  /* CARDS / GRIDS */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+  .grid-6{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 22px;box-shadow:0 1px 0 rgba(10,47,68,0.04)}
+  .card.warm{background:var(--paper-warm)}
+  .card.deep{background:var(--deep-blue);color:#f3ead0;border-color:var(--deep-blue)}
+  .card.deep h3,.card.deep h4{color:var(--gold)}
+  .card.deep p,.card.deep li{color:#e2d9bb}
+  .stat{font-family:Georgia,serif;font-size:34px;color:var(--deep-blue);font-weight:700;line-height:1}
+  .stat .unit{font-size:14px;color:var(--muted);margin-left:6px;font-weight:400;font-family:Inter,sans-serif}
+  .label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+
+  /* ASSET TILES */
+  .asset{
+    background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;
+    display:flex;flex-direction:column;gap:8px;min-height:170px;position:relative;overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .asset:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,47,68,0.08)}
+  .asset .icon{font-size:28px}
+  .asset .title{font-family:Georgia,serif;font-size:18px;color:var(--deep-blue);font-weight:700}
+  .asset .desc{font-size:14px;color:var(--ink-soft);line-height:1.6}
+  .asset .tag{position:absolute;top:14px;right:14px;font-size:11px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
+
+  /* TIMELINE */
+  .timeline{position:relative;margin:30px 0 10px;padding:30px 0}
+  .timeline-track{height:2px;background:var(--line);position:relative;margin:0 30px}
+  .tl-stages{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin:-9px 0 0}
+  .tl-dot{
+    width:18px;height:18px;border-radius:50%;background:var(--gold);
+    border:3px solid var(--paper);box-shadow:0 0 0 2px var(--gold);
+    margin:0 auto;position:relative;z-index:2;
+  }
+  .tl-stage{padding:20px 10px 0;text-align:center}
+  .tl-stage .stagename{font-family:Georgia,serif;color:var(--deep-blue);font-weight:700;font-size:15px;margin-top:14px}
+  .tl-stage .when{font-size:12px;color:var(--gold);letter-spacing:.1em;margin-top:4px}
+  .tl-rows{margin-top:22px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .tl-row{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;font-size:13px;line-height:1.55}
+  .tl-row.snow{background:#0A2F44;color:#e8dfb8;border-color:#0A2F44}
+  .tl-row.family{background:var(--paper-warm)}
+  .tl-row .h{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.85}
+  .tl-row.snow .h{color:var(--gold)}
+  .tl-row.family .h{color:var(--jade)}
+
+  /* TABLES */
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;background:#fff}
+  th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+  th{background:var(--paper-warm);font-family:Georgia,serif;color:var(--deep-blue);font-weight:700;letter-spacing:.02em}
+  tbody tr:hover{background:rgba(201,160,61,0.08)}
+
+  /* THREE-COL EQUAL VALUE MATRIX */
+  .matrix{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:stretch}
+  .col{
+    background:#fff;border-top:4px solid var(--gold);
+    border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:24px 22px;display:flex;flex-direction:column;
+  }
+  .col.b{border-top-color:var(--deep-blue)}
+  .col.r{border-top-color:var(--jade)}
+  .col.rbw{border-top-color:var(--gold)}
+  .col h3{margin-top:0;font-size:18px}
+  .col ul{padding-left:18px;margin:8px 0 0}
+  .col li{font-size:14px;line-height:1.6;margin-bottom:12px}
+
+  /* DECISION BOX */
+  .decision{
+    border:2px solid var(--gold);
+    background:linear-gradient(180deg,#fdf8e8 0%, #f5efe0 100%);
+    padding:32px 32px;border-radius:10px;margin-top:30px;
+    box-shadow:0 6px 24px rgba(201,160,61,0.15);
+  }
+  .decision h3{margin-top:0;color:var(--deep-blue)}
+
+  /* HERO of group section */
+  .group-hero{
+    background:linear-gradient(135deg,#0A2F44 0%, #0e3d57 100%);
+    color:#f3ead0;border-radius:10px;padding:30px 32px;margin:18px 0 28px;
+    display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center;
+  }
+  .group-hero h3{color:var(--gold);margin:0 0 10px;font-size:24px}
+  .group-hero p{color:#e2d9bb}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .badge{background:rgba(201,160,61,0.16);color:var(--gold);font-size:12px;letter-spacing:.06em;padding:6px 12px;border-radius:20px;border:1px solid rgba(201,160,61,0.4)}
+
+  /* DUAL PATH */
+  .paths{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:18px 0}
+  .path{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;border-top:4px solid var(--gold)}
+  .path.two{border-top-color:var(--jade)}
+  .path .ptag{font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+  .path.two .ptag{color:var(--jade)}
+  .path h3{margin-top:8px}
+  .path .amount{font-family:Georgia,serif;font-size:26px;color:var(--deep-blue);font-weight:700;margin:6px 0 12px}
+
+  /* RBW BLOCK */
+  .rbw-wrap{
+    background:linear-gradient(180deg,#fdf8e8 0%, #f5efe0 100%);
+    border:1px solid var(--line);border-radius:10px;padding:30px;margin-top:18px;
+  }
+  .systems{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+  .system{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px}
+  .system .num{font-family:Georgia,serif;color:var(--gold);font-size:13px;letter-spacing:.18em}
+  .system h4{margin:6px 0 8px;color:var(--deep-blue);text-transform:none;letter-spacing:0;font-size:17px;font-family:Georgia,serif}
+  .system .en{font-style:italic;color:var(--muted);font-size:13px;margin-bottom:8px;display:block}
+  .coming{
+    margin-top:18px;border:1px dashed var(--gold);background:rgba(201,160,61,0.06);
+    padding:18px 22px;border-radius:8px;text-align:center;color:var(--deep-blue);
+    font-family:Georgia,serif;font-style:italic;
+  }
+
+  /* FOUNDERS */
+  .founders{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px}
+  .founder{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;border-top:4px solid var(--deep-blue)}
+  .founder.r{border-top-color:var(--jade)}
+  .founder .role{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+  .founder h3{margin:6px 0 4px;font-size:22px}
+  .founder .sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+
+  /* ROADMAP */
+  .roadmap{display:grid;grid-template-columns:1fr;gap:8px;margin-top:14px}
+  .rm-row{display:grid;grid-template-columns:160px 1fr;gap:18px;padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:6px}
+  .rm-row:hover{background:rgba(201,160,61,0.06)}
+  .rm-when{font-family:Georgia,serif;color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.04em}
+  .rm-what{font-size:14px;color:var(--ink-soft)}
+
+  /* NAMES OPTIONS */
+  .names{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+  .name{
+    background:var(--paper-warm);border:1px solid var(--line);border-radius:8px;padding:20px;
+    text-align:center;
+  }
+  .name .zh{font-family:Georgia,serif;font-size:20px;color:var(--deep-blue);font-weight:700}
+  .name .en{font-family:Georgia,serif;font-style:italic;color:var(--muted);font-size:14px;display:block;margin-top:6px}
+  .name .gloss{font-size:12px;color:var(--muted);margin-top:8px}
+
+  /* FOOTER */
+  footer{background:var(--deep-blue);color:#cfc69f;text-align:center;padding:40px 24px;font-size:13px;letter-spacing:.08em}
+  footer .gold{color:var(--gold)}
+
+  @media (max-width: 900px){
+    .grid-2,.grid-3,.grid-6,.matrix,.systems,.paths,.founders{grid-template-columns:1fr}
+    .tl-stages,.tl-rows{grid-template-columns:1fr 1fr 1fr}
+    .group-hero{grid-template-columns:1fr}
+    .cover h1{font-size:42px}
+    .rm-row{grid-template-columns:110px 1fr}
+  }
+  @media (max-width: 560px){
+    .tl-stages,.tl-rows,.names{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- 01 · COVER -->
+<header class="cover">
+  <div class="eyebrow">CHARITY · BLUEPRINT · V1 · 2026.05</div>
+  <h1>RETURN<span class="bar">｜</span>回到桌前</h1>
+  <p class="zh-sub">一個香港家族的雙向回鄉敘事</p>
+  <p class="en-sub">Where East and West, sister and brother, finance and culture, sit at the same table.</p>
+  <div class="ornament"></div>
+  <div class="meta">HONG KONG · SICHUAN · SINGAPORE · CALIFORNIA</div>
+</header>
+
+<main>
+
+<!-- 02 · EXECUTIVE SUMMARY -->
+<section>
+  <div class="sec-num">02 · EXECUTIVE SUMMARY</div>
+  <h2>執行摘要 <span class="en">A One-Page Read</span></h2>
+  <p class="lead">本文件以 2026 年 5 月為時點，整合一個香港家族正在執行中的四條真實主線——香港中盈頂耀新能源投資集團的產業版圖與雪豹保護戰略項目、RBW Studio 東西方傳統命理研究工作室、四川山區貧困兒童畫畫公益與成都麓湖兒童中心義賣，以及創始姐弟回到童年家鄉四川的雙向反哺。</p>
+  <div class="grid-3" style="margin-top:24px">
+    <div class="card">
+      <div class="stat">55–100<span class="unit">萬元</span></div>
+      <div class="label">SNOW LEOPARD BP V2.1 · 雪豹戰略總投入</div>
+      <p class="small" style="margin-top:10px">由四川天府中碳出資，雙路徑：WCS 戰略捐贈 + 聯合署名報告。集團內地碳匯事業部唯一總部級載體主導執行。</p>
+    </div>
+    <div class="card">
+      <div class="stat">6<span class="unit">大產業資產</span></div>
+      <div class="label">GROUP PORTFOLIO · 集團產業版圖</div>
+      <p class="small" style="margin-top:10px">光伏 / 風電 / 儲能 / 海外虛擬電廠 / 林業碳匯，跨四川、廣西、山東、英國四地佈局，2025 年 10 月四川 2×100MW 儲能已全容量併網。</p>
+    </div>
+    <div class="card">
+      <div class="stat">18<span class="unit">個月行動地圖</span></div>
+      <div class="label">2026.05 → 2027.10</div>
+      <p class="small" style="margin-top:10px">六階段時間線將集團戰略動作、姐弟雙人創業節奏、家鄉公益執行三條敘事縫成一張可審計的路線圖。</p>
+    </div>
+  </div>
+
+  <div class="quote">
+    The lines do not dictate. The cards do not command. The time does not condemn. They simply illuminate.
+    <div style="font-family:Inter,sans-serif;font-style:normal;font-size:13px;color:var(--muted);margin-top:10px;letter-spacing:.04em">— rbwmeta.com</div>
+  </div>
+</section>
+
+<!-- 03 · B.W & GROUP -->
+<section>
+  <div class="sec-num">03 · THE PRINCIPAL</div>
+  <h2>B.W：姐姐與香港中盈頂耀集團 <span class="en">The Sister at the Head of the Table</span></h2>
+  <p class="lead">本敘事的第一主角是 B.W——30 歲，香港籍，8 年海外留學經歷後回國深耕新能源行業。她的身份不是"某人的姐姐"，而是一位以新能源產業為基本盤、以生態公益為戰略延伸、以文化創業為跨界縱深的香港青年企業家。</p>
+
+  <div class="founders">
+    <div class="founder">
+      <div class="role">FOUNDER · PRINCIPAL</div>
+      <h3>B.W</h3>
+      <div class="sub">姐姐 · 第一主角 · 集團董事長</div>
+      <ul>
+        <li><strong>香港中盈頂耀新能源投資集團</strong> 董事長</li>
+        <li><strong>香港青年內地就業創業聯合會</strong> 會長（2019 年於中聯辦指導下成立，非營利機構）</li>
+        <li><strong>四川天府中碳環保科技有限公司</strong>——集團內地碳匯事業部唯一總部級載體</li>
+        <li><strong>RBW Studio</strong> 聯合創始人 · 中文文化端 · 紫微斗數 / 小六壬研習者</li>
+        <li>30 歲 · 香港籍 · 8 年海外留學經歷</li>
+      </ul>
+      <p class="small" style="margin-top:10px">在每一個關鍵敘事節點，B.W 的雙重身份必須被同時提及：<strong>集團董事長 + 香港青年內地就業創業聯合會會長</strong>。這是她在新能源資本市場與青年社會事務兩條跑道上同時持有的真實席位。</p>
+    </div>
+    <div class="founder r">
+      <div class="role">CO-FOUNDER · COLLABORATOR</div>
+      <h3>R.W</h3>
+      <div class="sub">弟弟 · 第二主角 · 共同發起人</div>
+      <ul>
+        <li>16 歲 · 2010 年 1 月出生於香港</li>
+        <li>0–5 歲在四川生活（2010–2015）——核心情感錨點</li>
+        <li>香港讀書（2015–2019）→ 美國加州讀高中（2019 至今）</li>
+        <li>2028 年 9 月入讀大學</li>
+        <li><strong>RBW Studio</strong> 聯合創始人 · 技術 + 西方文化端 · 塔羅研習者</li>
+      </ul>
+      <p class="small" style="margin-top:10px">公開材料中，弟弟統一以"項目共同發起人 / 姐姐的弟弟 / R.W"指代，不使用真名。在本叙事中，他是 B.W 的合作者，不是受益人。</p>
+    </div>
+  </div>
+
+  <div class="group-hero">
+    <div>
+      <h3>香港中盈頂耀新能源投資集團</h3>
+      <p>一家以光伏、風電、儲能、虛擬電廠與林業碳匯為核心資產的香港新能源投資集團。資產組合橫跨中國西南（四川、廣西）、華東（山東）與英國本土市場，覆蓋"開發 → 並網 → 運營 → 碳資產"完整鏈條。</p>
+      <div class="badge-row">
+        <span class="badge">NEW ENERGY</span>
+        <span class="badge">STORAGE</span>
+        <span class="badge">CARBON ASSETS</span>
+        <span class="badge">CROSS-BORDER</span>
+        <span class="badge">ESG</span>
+      </div>
+    </div>
+    <div>
+      <div class="stat" style="color:var(--gold)">615<span class="unit" style="color:#cfc69f">MW · 開發容量合計</span></div>
+      <div class="label" style="color:#cfc69f;margin-top:14px">光伏 150 + 風電 165 + 儲能 200 + 自建儲能 100 × 2</div>
+      <div class="stat" style="color:var(--gold);margin-top:18px">3<span class="unit" style="color:#cfc69f">個林業碳匯項目</span></div>
+      <div class="label" style="color:#cfc69f;margin-top:6px">第三個項目 2025.12 已完成公示</div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · GROUP PORTFOLIO -->
+<section>
+  <div class="sec-num">04 · GROUP PORTFOLIO</div>
+  <h2>集團產業版圖 <span class="en">Six Assets Across Four Geographies</span></h2>
+  <p class="lead">以下六大資產構成 B.W 主導的真實產業底盤。它們不是叙事佈景，而是雪豹戰略、RBW 跨界、家鄉公益三條延伸線得以站立的承重牆。</p>
+
+  <div class="grid-6" style="margin-top:24px">
+    <div class="asset">
+      <div class="tag">FULL-CHAIN DEV</div>
+      <div class="icon">🌞</div>
+      <div class="title">廣西 · 150MW 漁光互補</div>
+      <div class="desc">全流程開發。漁業養殖與光伏發電一體化的西南優勢項目。</div>
+    </div>
+    <div class="asset">
+      <div class="tag">FULL-CHAIN DEV</div>
+      <div class="icon">💨</div>
+      <div class="title">四川川東 · 165MW 集中式風電</div>
+      <div class="desc">全流程開發。集團在川東山地風資源帶的旗艦風電項目。</div>
+    </div>
+    <div class="asset">
+      <div class="tag">DEV + OPS</div>
+      <div class="icon">🔋</div>
+      <div class="title">山東威海 · 200MW / 400MWh</div>
+      <div class="desc">獨立儲能電站，開發與運營一體。集團在華東電力市場的獨立調節資產。</div>
+    </div>
+    <div class="asset">
+      <div class="tag">ONLINE · 2025.10</div>
+      <div class="icon">🔋</div>
+      <div class="title">四川 · 2 × 100MW / 200MWh</div>
+      <div class="desc">2 個獨立儲能電站，自建自運營，2025 年 10 月已完成全容量併網投運。</div>
+    </div>
+    <div class="asset">
+      <div class="tag">UK MARKET</div>
+      <div class="icon">🇬🇧</div>
+      <div class="title">英國 · 小型虛擬電廠</div>
+      <div class="desc">參與運營。集團在英國本土電力市場的海外資產佈點。</div>
+    </div>
+    <div class="asset">
+      <div class="tag">CARBON · 公示完成</div>
+      <div class="icon">🌲</div>
+      <div class="title">林業碳匯 · 2 個在開發</div>
+      <div class="desc">其中四川省第三個林業碳匯項目已於 2025 年 12 月完成公示。</div>
+    </div>
+  </div>
+
+  <p class="small" style="margin-top:24px">所有資產均由香港中盈頂耀新能源投資集團持有或主導開發。四川天府中碳環保科技有限公司作為集團內地碳匯事業部<strong>唯一總部級載體</strong>，承接全部碳資產業務及雪豹保護戰略項目的執行落地。</p>
+</section>
+
+<!-- 05 · SNOW LEOPARD STRATEGY -->
+<section>
+  <div class="sec-num">05 · SNOW LEOPARD STRATEGY · BP V2.1</div>
+  <h2>雪豹戰略：B.W 主導的集團旗艦公益戰略項目 <span class="en">A Dual-Path Architecture, Underwritten by Tianfu Carbon</span></h2>
+  <p class="lead">雪豹保護與碳匯評估戰略合作計劃書 V2.1 已成稿，準備啟動執行。這不是一次性的企業捐贈，而是 B.W 主導、由四川天府中碳出資、橫跨 18 個月的集團旗艦級戰略項目——它同時承擔品牌資產、政府關係、科研數據、ESG 履歷四重戰略目標。</p>
+
+  <h3>雙路徑架構 · Dual-Path Architecture</h3>
+  <div class="paths">
+    <div class="path">
+      <div class="ptag">PATH 1 · 戰略捐贈</div>
+      <h3>WCS 雪豹防護欄戰略捐贈</h3>
+      <div class="amount">15–30 萬元</div>
+      <ul>
+        <li>直接捐贈 WCS 國際野生生物保護學會</li>
+        <li>定向用於其在<strong>青海三江源、四川</strong>等地長期執行的雪豹防護欄項目（人獸衝突緩解核心工作）</li>
+        <li>15–30 萬元為 WCS 量級機構<strong>有分量的單筆企業戰略捐贈</strong></li>
+        <li>同時是路徑二聯合署名報告的<strong>資格門票</strong></li>
+      </ul>
+    </div>
+    <div class="path two">
+      <div class="ptag">PATH 2 · 聯合報告</div>
+      <h3>權威專家聯合發布雪豹棲息地碳匯與生物多樣性價值評估報告</h3>
+      <div class="amount">30–50 萬元</div>
+      <ul>
+        <li>由<strong>四川天府中碳出資委託</strong>，聯合署名發布</li>
+        <li>含碳儲量評估</li>
+        <li>含生物多樣性溢價測算</li>
+        <li>含 CCER 與 VCS 方法學適用性</li>
+        <li>含商業化可行性結論</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-top:18px">
+    <div class="card warm">
+      <h4>總投入</h4>
+      <div class="stat">55–100<span class="unit">萬元</span></div>
+      <p class="small" style="margin-top:8px">含公關傳播 5–10 萬 + 項目管理預備金 5–10 萬。</p>
+    </div>
+    <div class="card warm">
+      <h4>執行主體</h4>
+      <p style="margin:6px 0 0"><strong>四川天府中碳環保科技有限公司</strong></p>
+      <p class="small" style="margin-top:8px">集團內地碳匯事業部<strong>唯一總部級載體</strong>。不是地方臨時分支，是集團碳匯業務旗艦戰略項目。</p>
+    </div>
+    <div class="card warm">
+      <h4>戰略性質</h4>
+      <p style="margin:6px 0 0">結果無關的稅賺戰略投資</p>
+      <p class="small" style="margin-top:8px">無論結果 A 或 B，55–100 萬投入均能換回品牌、政府關係、科研數據、個人履歷四重資產。</p>
+    </div>
+  </div>
+
+  <h3>最優合作機構組合</h3>
+  <table>
+    <thead><tr><th>角色</th><th>機構</th><th>狀態</th></tr></thead>
+    <tbody>
+      <tr><td>雙路徑雙重錨點</td><td>WCS 國際野生生物保護學會</td><td><strong style="color:var(--jade)">已鎖定</strong></td></tr>
+      <tr><td>國內科研主筆</td><td>山水自然保護中心 / 北大自然保護中心</td><td>對接中</td></tr>
+      <tr><td>數據支撐</td><td>中國科學院西北高原生物研究所</td><td>對接中</td></tr>
+      <tr><td>政府落地</td><td>四川省林業和草原局 + 臥龍 / 貢嘎山保護區管理局</td><td>對接中</td></tr>
+      <tr><td>CCER 方法學背書</td><td>中國林業科學研究院</td><td>對接中</td></tr>
+    </tbody>
+  </table>
+
+  <h3>雙結果推演 A / B</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h4 style="color:var(--gold)">結果 A · 碳匯可商業化開發</h4>
+      <div class="stat">560–1,376<span class="unit">萬元 / 年（測算值）</span></div>
+      <p class="small" style="margin-top:10px">5–10 萬噸 × 86 元/噸 × 1.3–1.6 倍生物多樣性溢價。<strong>全部為測算值</strong>，僅作為戰略決策參考。</p>
+    </div>
+    <div class="card">
+      <h4 style="color:var(--gold)">結果 B · 暫不具備經濟價值</h4>
+      <p style="margin:6px 0 8px"><strong>五大價值鎖定：</strong></p>
+      <ul>
+        <li>品牌資產</li>
+        <li>科研數據</li>
+        <li>政府關係</li>
+        <li>個人公益履歷</li>
+        <li>戰略轉向預案</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:30px">
+    無論 A 或 B，55–100 萬投入均能換回品牌、政府關係、科研數據、個人履歷四重資產——這是一筆<strong>結果無關的穩賺戰略投資</strong>。
+  </div>
+</section>
+
+<!-- 06 · 6-STAGE TIMELINE -->
+<section>
+  <div class="sec-num">06 · 6-STAGE TIMELINE</div>
+  <h2>六階段時間線 <span class="en">Snow Leopard Action × Family Narrative — Two Lines, One Schedule</span></h2>
+  <p class="lead">雪豹戰略動作（深藍）與家族敘事整合點（米色）並列雙行。每一個集團戰略動作都對應一個家族敘事節點，反之亦然。這條時間線是本文件的真實骨架。</p>
+
+  <div class="timeline">
+    <div class="tl-stages">
+      <div class="tl-stage"><div class="tl-dot"></div><div class="stagename">Stage 1</div><div class="when">2026.05–06</div></div>
+      <div class="tl-stage"><div class="tl-dot"></div><div class="stagename">Stage 2</div><div class="when">2026.06–07</div></div>
+      <div class="tl-stage"><div class="tl-dot"></div><div class="stagename">Stage 3</div><div class="when">2026.08–10</div></div>
+      <div class="tl-stage"><div class="tl-dot"></div><div class="stagename">Stage 4</div><div class="when">2026.11–2027.01</div></div>
+      <div class="tl-stage"><div class="tl-dot"></div><div class="stagename">Stage 5</div><div class="when">2027.02–04</div></div>
+      <div class="tl-stage"><div class="tl-dot"></div><div class="stagename">Stage 6</div><div class="when">2027.05–10</div></div>
+    </div>
+
+    <div class="tl-rows" style="margin-top:30px">
+      <div class="tl-row snow"><div class="h">SNOW LEOPARD</div>內部立項 + 接觸 WCS 與國內科研機構</div>
+      <div class="tl-row snow"><div class="h">SNOW LEOPARD</div>WCS 戰略捐贈協議簽署 + 報告委託協議</div>
+      <div class="tl-row snow"><div class="h">SNOW LEOPARD</div>WCS 防護欄在受捐贈社區落地 + 報告野外調研啟動 + 媒體首輪傳播</div>
+      <div class="tl-row snow"><div class="h">SNOW LEOPARD</div>報告中期成果交付</div>
+      <div class="tl-row snow"><div class="h">SNOW LEOPARD</div>聯合報告發布會</div>
+      <div class="tl-row snow"><div class="h">SNOW LEOPARD</div>長期路徑鎖定（CCER 開發或戰略轉向）+ 與 WCS 續簽</div>
+    </div>
+
+    <div class="tl-rows" style="margin-top:14px">
+      <div class="tl-row family"><div class="h">FAMILY NARRATIVE</div>RBW 新加坡公司 6 月初註冊完成</div>
+      <div class="tl-row family"><div class="h">FAMILY NARRATIVE</div>暑期畫畫公益啟動</div>
+      <div class="tl-row family"><div class="h">FAMILY NARRATIVE</div>R.W 暑假回川：青年觀察員身份參與 WCS 防護欄交付節點 + 畫畫公益執行 + 麓湖義賣</div>
+      <div class="tl-row family"><div class="h">FAMILY NARRATIVE</div>RBW 衍生青少年雪豹科普副產品啟動</div>
+      <div class="tl-row family"><div class="h">FAMILY NARRATIVE</div>RBW 雙語科普副產品發布</div>
+      <div class="tl-row family"><div class="h">FAMILY NARRATIVE</div>家族敘事長期資產沉澱</div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · RBW STUDIO -->
+<section>
+  <div class="sec-num">07 · CULTURAL ENGINE</div>
+  <h2>RBW Studio：姐弟聯合的文化引擎 <span class="en">rbwmeta.com — Where East and West sit at the same table</span></h2>
+  <p class="lead">RBW Studio 是 B.W 與 R.W 在 2026 年 4 月底用兩週時間以 AI 協作完成的東西方傳統命理研究工作室。它不是雪豹戰略的替代物，而是集團首個 C 端 / 文化 / 國際市場實體——對未來集團赴港 IPO 或引入戰投，這是稀缺的跨界叙事加分項。</p>
+
+  <div class="rbw-wrap">
+    <div class="grid-2">
+      <div>
+        <h4 style="color:var(--gold)">品牌定位</h4>
+        <p class="serif" style="font-size:20px;color:var(--deep-blue);font-style:italic;margin:8px 0 4px">"Where East and West sit at the same table."</p>
+        <h4 style="color:var(--gold);margin-top:22px">品牌語調</h4>
+        <p>"scholarly rigor and human warmth" · "not a place of vague mysticism" · "classical systems, approached with scholarly rigor"</p>
+        <h4 style="color:var(--gold);margin-top:22px">品牌名 RBW</h4>
+        <p>官網未公開說明，本網站留白處理——保持品牌神秘感。</p>
+      </div>
+      <div>
+        <h4 style="color:var(--gold)">核心金句</h4>
+        <div class="quote" style="margin:8px 0 0">
+          The lines do not dictate. The cards do not command. The time does not condemn. They simply illuminate.
+        </div>
+        <h4 style="color:var(--gold);margin-top:22px">創立與註冊</h4>
+        <ul>
+          <li>2026 年 4 月底創立 · rbwmeta.com 上線</li>
+          <li>RBW Studio Pte. Ltd.（新加坡）預計 2026 年 6 月初完成註冊</li>
+          <li>姐弟兩週內以 AI 協作完成全部初版內容</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>三大現有體系</h3>
+    <div class="systems">
+      <div class="system">
+        <div class="num">SYSTEM Ⅰ</div>
+        <h4>小六壬</h4>
+        <span class="en">Xiao Liu Ren · Small Six Yang Divination</span>
+        <p class="small">諸葛馬前課傳承 / 唐代天文學家與道家傳承。</p>
+      </div>
+      <div class="system">
+        <div class="num">SYSTEM Ⅱ</div>
+        <h4>塔羅</h4>
+        <span class="en">Tarot · 78-Card Divination</span>
+        <p class="small">原型讀法 / 與潛意識的對話。</p>
+      </div>
+      <div class="system">
+        <div class="num">SYSTEM Ⅲ</div>
+        <h4>紫微斗數</h4>
+        <span class="en">Purple Star Astrology</span>
+        <p class="small">陳摶祖師傳承 / 14 主星 12 宮位。</p>
+      </div>
+    </div>
+
+    <div class="coming">
+      System Ⅳ · Coming Soon — 第四體系正在閉門準備中，暫不對外披露。
+    </div>
+
+    <h3>創始人分工</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>R.W</h4>
+        <p>技術 + 西方文化端 + 塔羅 + 工作室在線呈現。</p>
+      </div>
+      <div class="card">
+        <h4>B.W</h4>
+        <p>中文文化端 + 紫微斗數 + 小六壬 + 文本與傳承。</p>
+      </div>
+    </div>
+    <p class="serif" style="font-style:italic;text-align:center;color:var(--deep-blue);font-size:18px;margin-top:24px">
+      "Together, the two of them are how East and West actually sit at the same table."
+    </p>
+  </div>
+</section>
+
+<!-- 08 · CHARITY MATRIX -->
+<section>
+  <div class="sec-num">08 · CHARITY MATRIX</div>
+  <h2>公益矩陣 <span class="en">Three Channels · One Coherent ESG Story</span></h2>
+  <p class="lead">公益矩陣由三條互相咬合的執行線組成：路徑一 WCS 防護欄、路徑二聯合報告、四川山區畫畫義賣。三條線共同構成集團 ESG / CSR 閉環，並提供國際話語權的真實底材。</p>
+
+  <h3>四川山區畫畫公益 + 麓湖兒童中心義賣</h3>
+  <div class="card warm">
+    <div class="grid-2">
+      <div>
+        <h4>執行時間</h4>
+        <p>2026 年 7–8 月（暑假）</p>
+        <h4>執行地點</h4>
+        <p>四川山區貧困地區 → 成都麓湖兒童中心</p>
+        <h4>執行主體</h4>
+        <p>B.W &amp; R.W 聯合，RBW Studio 名義參與。</p>
+      </div>
+      <div>
+        <h4>執行模式</h4>
+        <ul>
+          <li>姐弟二人 + 邀請的畫畫老師團隊進入四川山區</li>
+          <li>教貧困家庭孩子畫畫</li>
+          <li>把孩子們的畫帶回成都麓湖兒童中心進行公益義賣</li>
+          <li>組織熱心公益群體全部買下</li>
+          <li>每幅畫的款項 <strong>100% 反哺貧困家庭</strong>增加收入</li>
+          <li>姐弟與團隊在中間<strong>不收取任何費用</strong></li>
+          <li>配合媒體曝光（專業 PR 統一口徑）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3>項目命名 · 三個備選</h3>
+  <p>三個備選名均克制學術腔但有溫度，與 RBW 的"scholarly rigor and human warmth"調性契合，體現"四川山間 / 雙手 / 桌前 / 童年 / 回鄉"的意象。</p>
+  <div class="names">
+    <div class="name">
+      <div class="zh">山間之手</div>
+      <span class="en">The Mountain Hand</span>
+      <div class="gloss">山的孩子用自己的手把家畫出來，這隻手由家鄉領回到桌前。</div>
+    </div>
+    <div class="name">
+      <div class="zh">回到桌前的小畫</div>
+      <span class="en">Small Drawings, Returned to the Table</span>
+      <div class="gloss">與本網站主標題對位——畫從山裡來，最終回到桌前被認真對待。</div>
+    </div>
+    <div class="name">
+      <div class="zh">童年的回信</div>
+      <span class="en">Letters Home from Childhood</span>
+      <div class="gloss">將每幅畫定位為一封寫給家鄉與童年的回信，隱含姐弟雙向反哺的核心叙事。</div>
+    </div>
+  </div>
+  <p class="small" style="margin-top:14px">最終命名以執行階段內部討論為準。</p>
+</section>
+
+<!-- 09 · SICHUAN ANCHOR -->
+<section style="background:var(--paper-warm);margin:0 -28px;padding:80px 28px;border-radius:0">
+  <div class="sec-num">09 · SICHUAN</div>
+  <h2>四川：把一切縫在一起的那根針 <span class="en">The Needle That Stitches It All Together</span></h2>
+  <p class="lead">四川不是任意一個外部地點。它是把這個家族的四條叙事主線縫成同一塊布的那根針——弟弟的童年在這裡被撫養，集團的碳匯總部設在這裡，雪豹的棲息地分佈在這裡，今年暑假的畫畫公益也將在這裡執行。</p>
+
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card">
+      <h4>童年（2010–2015）</h4>
+      <p>弟弟 R.W 0–5 歲在四川生活。這是他開口說話、第一次握筆、第一次認得山的五年。後來他回到香港、又去了加州，但語言與味覺的底層、對山與河的最早印象，是被四川寫進去的。</p>
+    </div>
+    <div class="card">
+      <h4>產業總部</h4>
+      <p>四川天府中碳環保科技有限公司——集團內地碳匯事業部唯一總部級載體。四川 2 個獨立儲能電站（各 100MW / 200MWh）2025 年 10 月已全容量併網投運。四川省第三個林業碳匯項目 2025 年 12 月完成公示。</p>
+    </div>
+    <div class="card">
+      <h4>雪豹棲息地</h4>
+      <p>WCS 在四川長期執行雪豹防護欄項目。臥龍、貢嘎山保護區管理局是雪豹戰略路徑二聯合報告的政府落地對接方。集團碳匯總部與雪豹棲息地共處同一行政疆域，這是叙事與行政的雙重重合。</p>
+    </div>
+    <div class="card">
+      <h4>公益執行地</h4>
+      <p>2026 年 7–8 月，四川山區貧困地區是畫畫公益的執行地，成都麓湖兒童中心是義賣的承載地。山裡的孩子用畫筆寄出第一份產出，姐弟在桌的這一端把它接住。</p>
+    </div>
+  </div>
+
+  <p class="serif" style="font-style:italic;color:var(--deep-blue);font-size:19px;margin-top:36px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto">
+    一個家族的四條叙事——產業、公益、文化、童年——共用同一塊四川的地。從香港和加州出發的這條返程，最終都落在同一張桌前。
+  </p>
+</section>
+
+<!-- 10 · VALUE MATRIX -->
+<section>
+  <div class="sec-num">10 · VALUE MATRIX</div>
+  <h2>三欄對稱價值矩陣 <span class="en">Symmetric Value Across Three Beneficiaries</span></h2>
+  <p class="lead">本敘事的三個受益主體——B.W &amp; 集團、RBW Studio、R.W——在價值結構上各取一欄，視覺等高、字數等量。這不是溫情敘事，而是一份可審計的多方價值對照表。</p>
+
+  <div class="matrix">
+    <div class="col b">
+      <h3>Value to B.W &amp; 集團</h3>
+      <ul>
+        <li><strong>個人品牌升級：</strong>新能源 + 文化創業 + 生態公益複合型香港青年企業家。</li>
+        <li><strong>跨界資本叙事：</strong>RBW 新加坡公司是集團首個 C 端 / 文化 / 國際市場實體，對未來集團赴港 IPO / 引入戰投是稀缺加分項。</li>
+        <li><strong>政協 / 社會事務履歷：</strong>香港青年內地就業創業聯合會會長身份在生態公益與青年文化兩個維度同時兌現（克制呈現）。</li>
+        <li><strong>家族 IP 沉澱：</strong>創始家族長期文化資產，跨代延續性。</li>
+        <li><strong>集團 ESG / CSR 閉環：</strong>產業 + 碳匯 + 生物多樣性 + 公益四環打通，形成國際話語權底材。</li>
+      </ul>
+    </div>
+    <div class="col rbw">
+      <h3>Value to RBW Studio</h3>
+      <ul>
+        <li><strong>商業成果首秀：</strong>RBW 第一筆商業利潤反哺家鄉四川，定義品牌的初始道德底色。</li>
+        <li><strong>媒體引爆點：</strong>姐弟 + 跨國 + AI + 公益 = 零成本傳播敘事組合。</li>
+        <li><strong>國際機構背書：</strong>與雪豹 BP 聯動的國際機構資源（WCS 等）天然為 RBW 的國際化敘事背書。</li>
+        <li><strong>平台資源：</strong>香港青年內地就業創業聯合會所連接的青年與媒體網絡為 RBW 早期觸達提供平台。</li>
+        <li><strong>集團產業資源：</strong>對 RBW 早期資金、渠道、合規、跨境支付等基礎設施提供支持。</li>
+      </ul>
+    </div>
+    <div class="col r">
+      <h3>Value to R.W</h3>
+      <ul>
+        <li><strong>真實田野經歷：</strong>以青年觀察員身份參與 WCS 防護欄交付節點，獲得第一手生態保護現場經驗。</li>
+        <li><strong>創作產出：</strong>RBW 衍生雙語雪豹青少年科普副產品，作為共同發起人的署名作品。</li>
+        <li><strong>反哺家鄉：</strong>回到 0–5 歲的生活之地參與畫畫公益與義賣，把童年回成成年的責任。</li>
+        <li><strong>跨學科視野：</strong>玄學 + 生態 + 公益三條線在同一段暑期內互相印證，作為弟弟長期成長路徑的一部分，為其未來高等教育積累實質履歷。</li>
+        <li><strong>持續性項目：</strong>長期項目而非一次性活動，可在 18 個月時間線中持續產出。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · RISK & COMPLIANCE -->
+<section>
+  <div class="sec-num">11 · RISK &amp; COMPLIANCE</div>
+  <h2>風險對沖與合規邊界 <span class="en">Six Hedges, One Boundary</span></h2>
+  <p class="lead">V2.1 計劃書已將六項主要風險預先對沖。所有對沖措施均與雪豹戰略 6 階段時間線同步生效。</p>
+
+  <table>
+    <thead><tr><th style="width:36%">風險</th><th>對沖措施</th></tr></thead>
+    <tbody>
+      <tr><td>WCS 項目對接週期偏長</td><td>採用<strong>直接戰略捐贈形式</strong>啟動，繞開複雜科研流程，先行鎖定資格門票。</td></tr>
+      <tr><td>報告結論不利（結果 B）</td><td>結果 B 路徑預先鎖定<strong>四重資產</strong>：品牌 / 數據 / 政府關係 / 個人公益履歷 / 戰略轉向預案。</td></tr>
+      <tr><td>CCER 政策變化</td><td>同步跟蹤 <strong>VCS 與生物多樣性信用市場</strong>，方法學雙線備案。</td></tr>
+      <tr><td>資金週期延長</td><td>分階段付款 + <strong>里程碑制</strong>，付款節奏與 6 階段時間線對位。</td></tr>
+      <tr><td>媒體傳播失控</td><td>專業 PR <strong>統一口徑</strong>，所有對外傳播由集團公關事業部審核。</td></tr>
+      <tr><td>合規與公益身份審查</td><td>採用 <strong>WCS 在華合規捐贈通道</strong>，所有資金流向均通過受監管國際機構。</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 12 · 18-MONTH ROADMAP -->
+<section>
+  <div class="sec-num">12 · 18-MONTH ROADMAP</div>
+  <h2>18 個月行動地圖 <span class="en">2026.05 → 2027.10</span></h2>
+  <p class="lead">以下為 18 個月內可審計的關鍵動作清單。每一行均可被進一步拆分為里程碑、責任人、付款節點，但不在本文件範圍內展開。</p>
+
+  <div class="roadmap">
+    <div class="rm-row"><div class="rm-when">2026.05</div><div class="rm-what">雪豹 BP V2.1 內部立項；接觸 WCS 與國內科研機構；RBW Studio Pte. Ltd. 註冊文件提交。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.06</div><div class="rm-what">RBW 新加坡公司註冊完成；WCS 戰略捐贈協議談判；國內科研機構聯合報告委託意向書。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.07</div><div class="rm-what">WCS 戰略捐贈協議簽署；報告委託協議簽署；暑期畫畫公益啟動，姐弟二人 + 畫畫老師團隊進入四川山區。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.08</div><div class="rm-what">畫畫公益持續執行；R.W 以青年觀察員身份參與 WCS 防護欄交付節點；麓湖兒童中心義賣籌備。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.09</div><div class="rm-what">麓湖義賣執行；報告野外調研啟動；媒體首輪傳播（專業 PR 統一口徑）；款項 100% 反哺貧困家庭。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.10</div><div class="rm-what">WCS 防護欄在受捐贈社區持續落地；報告野外調研中期數據回收。</div></div>
+    <div class="rm-row"><div class="rm-when">2026.11–2027.01</div><div class="rm-what">報告中期成果交付；RBW 衍生青少年雪豹科普副產品啟動（雙語）。</div></div>
+    <div class="rm-row"><div class="rm-when">2027.02–04</div><div class="rm-what">雪豹聯合報告發布會；RBW 雙語青少年科普副產品同步發布；媒體第二輪傳播。</div></div>
+    <div class="rm-row"><div class="rm-when">2027.05–10</div><div class="rm-what">長期路徑鎖定：CCER / VCS 開發或結果 B 戰略轉向；與 WCS 續簽下一週期合作；家族敘事長期資產沉澱。</div></div>
+  </div>
+</section>
+
+<!-- 13 · CLOSING -->
+<section>
+  <div class="sec-num">13 · CLOSING</div>
+  <h2>結語與決策提示 <span class="en">A Note Before the Page Closes</span></h2>
+
+  <p class="lead">這不是一份溫情家族故事。這是一份以集團產業為基本盤、以雪豹戰略為旗艦項目、以 RBW Studio 為跨界縱深、以家鄉公益為情感錨點、由 B.W 主導、R.W 參與的 18 個月戰略執行文件。它同時可被三類受眾閱讀：內部決策者、合作機構、媒體。</p>
+
+  <p>在 2026 年 5 月這個時點，計劃書 V2.1 已成稿，WCS 已鎖定，集團碳匯總部已就位，四川 2×100MW 儲能已併網，第三個林業碳匯項目已公示，RBW 已上線並即將完成新加坡註冊。所有承重結構均已搭好——剩下的只是按時間線推進。</p>
+
+  <div class="decision">
+    <h3>決策提示</h3>
+    <ul>
+      <li><strong>啟動條件：</strong>2026.06 內完成 WCS 戰略捐贈協議簽署 + 報告委託協議簽署，視為 BP V2.1 正式生效。</li>
+      <li><strong>付款節奏：</strong>55–100 萬元總投入按 6 階段里程碑分批支付，由四川天府中碳環保科技有限公司執行。</li>
+      <li><strong>公關口徑：</strong>由集團公關事業部統一審核，姐弟雙人合影與媒體露出在 Stage 3（2026.08–10）首次公開。</li>
+      <li><strong>結果無關性：</strong>無論結果 A 或 B，55–100 萬投入均能換回品牌、政府關係、科研數據、個人公益履歷四重資產。</li>
+      <li><strong>長期錨點：</strong>2027.05–10 進入長期路徑鎖定階段，與 WCS 續簽，家族敘事資產正式沉澱。</li>
+    </ul>
+  </div>
+
+  <p class="serif" style="font-style:italic;text-align:center;color:var(--deep-blue);font-size:20px;margin-top:48px;max-width:780px;margin-left:auto;margin-right:auto">
+    Where East and West, sister and brother, finance and culture, sit at the same table. <br/>
+    桌已擺好。茶已倒上。回程開始了。
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <div>RETURN｜回到桌前 · CHARITY BLUEPRINT V1 · 2026.05</div>
+  <div style="margin-top:8px">HONG KONG ZHONGYING DINGYAO NEW ENERGY INVESTMENT GROUP · <span class="gold">SICHUAN TIANFU CARBON</span> · RBW STUDIO PTE. LTD.</div>
+  <div style="margin-top:8px;color:#7a7150">Internal · Confidential · For decision, partner, and press use only.</div>
+</footer>
+
+</body>
+</html>
