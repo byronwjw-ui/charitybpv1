@@ -22,7 +22,6 @@
     font-family:Inter,Roboto,system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
     line-height:1.72;font-size:15.5px}
   .serif{font-family:Georgia,"Source Han Serif SC","Songti SC","SimSun",serif}
-  /* COVER */
   .cover{
     min-height:88vh;
     background:var(--candle), linear-gradient(180deg,#0A2F44 0%,#0c3a52 60%,#0A2F44 100%);
@@ -138,6 +137,18 @@
     padding:14px 20px;border-radius:8px;text-align:center;color:var(--deep-blue);
     font-family:Georgia,serif;font-style:italic;}
 
+  /* RBW MISSION CARD (new) */
+  .mission{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;margin-top:16px;
+    border-left:4px solid var(--jade)}
+  .mission .pricetag{display:inline-block;background:var(--deep-blue);color:var(--gold);
+    font-family:Georgia,serif;font-size:14px;letter-spacing:.04em;
+    padding:6px 14px;border-radius:20px;margin-bottom:10px}
+  .mission .pricetag .big{font-size:22px;font-weight:700;margin:0 4px}
+  .mission-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+  .mission-grid .m{background:var(--paper-warm);border:1px solid var(--line);border-radius:8px;padding:14px}
+  .mission-grid .m h4{margin:0 0 6px;color:var(--deep-blue);text-transform:none;letter-spacing:0;font-size:14px;font-family:Georgia,serif}
+  .mission-grid .m p{font-size:13px;margin:0;color:var(--ink-soft)}
+
   .founders{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
   .founder{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;border-top:4px solid var(--deep-blue)}
   .founder.r{border-top-color:var(--jade)}
@@ -157,7 +168,6 @@
   .name .en{font-family:Georgia,serif;font-style:italic;color:var(--muted);font-size:13px;display:block;margin-top:5px}
   .name .gloss{font-size:11.5px;color:var(--muted);margin-top:6px}
 
-  /* ORIGIN STORY (initiative) */
   .origin{background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px;margin-top:14px}
   .origin .pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
   .origin .voice{border-left:3px solid var(--gold);padding-left:16px}
@@ -168,7 +178,7 @@
   footer .gold{color:var(--gold)}
 
   @media (max-width: 900px){
-    .grid-2,.grid-3,.grid-6,.matrix,.systems,.paths,.founders,.origin .pair{grid-template-columns:1fr}
+    .grid-2,.grid-3,.grid-6,.matrix,.systems,.paths,.founders,.origin .pair,.mission-grid{grid-template-columns:1fr}
     .tl-stages,.tl-rows{grid-template-columns:1fr 1fr 1fr}
     .group-hero{grid-template-columns:1fr}
     .cover h1{font-size:40px}
@@ -224,17 +234,17 @@
 <section>
   <div class="sec-num">03 · ORIGIN</div>
   <h2>初衷：姐弟在同一張桌前坐下來的那天 <span class="en">How the Two of Us Came to This, Together</span></h2>
-  <p class="lead">這件事的起點不在董事會，也不在任何一份計劃書裡。它起於一次再普通不過的家庭通話——關於弟弟在加州的暑假怎麼安排，關於姐姐在四川剛落地的儲能項目，關於外婆家門口那條他小時候走過的山路。</p>
+  <p class="lead">這件事的起點不在董事會，也不在任何一份計劃書裡。它起於一次再普通不過的家庭通話——關於弟弟在加州的暑假怎麼安排，關於姐姐在四川剛落地的儲能項目，關於我們是不是該一起做點什麼。</p>
 
   <div class="origin">
     <p>姐姐 30 歲，已在新能源行業裡跑了八年。弟弟 16 歲，在加州讀高中，對塔羅、對 AI、對東西方為什麼想問同一些問題感興趣。我們發現：產業的這一端，姐姐能調動真實的資金、團隊與政府關係；文化與技術的那一端，弟弟能把一套東方的東西用世界聽得懂的語言重新講出來。我們各自缺的那一塊，恰好是對方手裡有的。</p>
 
-    <p>於是我們決定不再分開做事。雪豹保護是姐姐主導的集團旗艦戰略，弟弟以青年觀察員身份參與；RBW Studio 是我們聯合創立的文化引擎，姐姐做中文與紫微，弟弟做技術與塔羅；四川山區的畫畫公益，是我們一起回到童年的家鄉，把熱錢換成山裡孩子的畫筆。三件事互不替代，但共用同一個底色：<strong>把中國西南、把香港、把世界，重新放在同一張桌前。</strong></p>
+    <p>於是我們決定不再分開做事。雪豹保護是姐姐主導的集團旗艦戰略，弟弟以青年觀察員身份參與；RBW Studio 是我們聯合創立的文化引擎，用最平民的價格給此刻焦慮的人遞上一份溫暖；四川山區的畫畫公益，是我們一起回到童年的家鄉，把熱錢換成山裡孩子的畫筆。三件事互不替代，但共用同一個底色：<strong>把中國西南、把香港、把世界，重新放在同一張桌前。</strong></p>
 
     <div class="pair">
       <div class="voice">
         <div class="who">B.W · 姐姐</div>
-        <p style="font-style:italic;color:var(--ink)">"我的基本盤是新能源、是碳匯、是青年企業家事務。但我希望這份基本盤能向外延伸——延伸到生態，延伸到文化，延伸到我們小時候真實走過的那塊土地。"</p>
+        <p style="font-style:italic;color:var(--ink)">"我的基本盤是新能源、是碳匯、是青年企業家事務。但我希望這份基本盤能向外延伸——延伸到生態，延伸到文化，延伸到那些此刻睡不著、想找一個人說一句話的人。"</p>
       </div>
       <div class="voice r">
         <div class="who">R.W · 弟弟</div>
@@ -242,7 +252,7 @@
       </div>
     </div>
 
-    <p style="margin-top:18px">我們的願景樸素：在新能源產業之外，留下一份結果無關也站得住的長期資產——可被審計的公益履歷、可被引用的科研數據、可被翻譯的文化品牌、可被孩子們記住的一個夏天。各自的長期理想抱負，姐姐在青年社會事務這條線上、弟弟在未來高等教育這條線上，<strong>都會自然兌現，不必在這份文件裡點名</strong>。</p>
+    <p style="margin-top:18px">我們的願景樸素：在新能源產業之外，留下一份結果無關也站得住的長期資產——可被審計的公益履歷、可被引用的科研數據、可被翻譯的文化品牌、可被孩子們記住的一個夏天，以及可被一個普通人用一杯奶茶錢換來的一次溫柔回應。各自的長期理想抱負，姐姐在青年社會事務這條線上、弟弟在未來高等教育這條線上，<strong>都會自然兌現，不必在這份文件裡點名</strong>。</p>
   </div>
 </section>
 
@@ -435,7 +445,27 @@
 <section>
   <div class="sec-num">08 · CULTURAL ENGINE</div>
   <h2>RBW Studio：姐弟聯合的文化引擎 <span class="en">rbwmeta.com — Where East and West sit at the same table</span></h2>
-  <p class="lead">RBW Studio 是 B.W 與 R.W 在 2026 年 4 月底用兩週時間以 AI 協作完成的東西方傳統命理研究工作室。產品自上線之日起即支援包括<strong>中、英、日、韓</strong>在內的八種語言，原生面向全球用戶。RBW 是集團首個 C 端 / 文化 / 國際市場實體。</p>
+  <p class="lead">RBW 不是另一個玄學產品，也不是給已經很安定的人提供的奢侈消遣。它是我們對"<strong>此刻焦慮的人</strong>"做的一件具體的事——以最平民可及的價格，把東方典籍的克制鄭重與西方原型心理學的同理結構，合在同一張桌前，用 AI 即時遞給每一個願意問一句話的人。</p>
+
+  <div class="mission">
+    <div class="pricetag">每條提問 <span class="big">3 元</span> 起 · 一杯奶茶錢的溫柔回應</div>
+    <p style="margin:6px 0 4px"><strong>產品形態：</strong>AI 驅動的東西方傳統命理研究工作室。用戶以 3 元/條起的價格提交一個正困擾自己的問題，由系統結合小六壬、塔羅、紫微三套體系給出兼具古典文本嚴謹與現代心理疏導語感的回應。原生支援包括<strong>中、英、日、韓</strong>在內的<strong>八種語言</strong>，從上線第一天起就面向全球用戶。</p>
+    <div class="mission-grid">
+      <div class="m">
+        <h4>① 平民可及</h4>
+        <p>3 元/條起。我們不做高客單算命，做的是一個普通人在地鐵上、在失眠的夜裡也付得起的那一次回應。</p>
+      </div>
+      <div class="m">
+        <h4>② 情緒價值</h4>
+        <p>面向<strong>當下焦慮的廣泛人群</strong>。先承接情緒，再給出視角。先溫暖，再啟發。不評判，不命令。</p>
+      </div>
+      <div class="m">
+        <h4>③ 東西方心理疏導</h4>
+        <p>東方典籍的克制鄭重 + 西方原型心理學的同理結構，由 AI 用使用者的母語即時呈現。專業，但不冷。</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top:12px">RBW 的商業利潤計劃在第一個完整財年反哺四川山區公益——把"被一個問題溫柔接住"的人，和"被一張畫鄭重接住"的孩子，連在同一條閉環上。</p>
+  </div>
 
   <div class="rbw-wrap">
     <div class="grid-2">
@@ -580,10 +610,10 @@
     <div class="col">
       <h3>Value to RBW Studio</h3>
       <ul>
+        <li><strong>使命落地：</strong>3 元/條起的平民定價驗證"以最低門檻給焦慮人群遞溫暖"是可持續商業模式。</li>
         <li><strong>商業成果首秀：</strong>RBW 第一筆商業利潤反哺家鄉四川，定義品牌的初始道德底色。</li>
-        <li><strong>媒體引爆點：</strong>姐弟 + 跨國 + AI + 公益 = 零成本傳播敘事。</li>
+        <li><strong>媒體引爆點：</strong>姐弟 + 跨國 + AI + 公益 + 普惠定價 = 零成本傳播敘事。</li>
         <li><strong>國際機構背書：</strong>與雪豹 BP 聯動的 WCS 等國際機構天然為 RBW 國際化背書。</li>
-        <li><strong>平台資源：</strong>香港青年內地就業創業聯合會所連接的青年與媒體網絡。</li>
         <li><strong>集團產業資源：</strong>對 RBW 早期資金、渠道、跨境合規提供支持。</li>
       </ul>
     </div>
@@ -593,7 +623,7 @@
         <li><strong>真實田野經歷：</strong>以青年觀察員身份參與 WCS 防護欄交付節點。</li>
         <li><strong>創作產出：</strong>RBW 衍生青少年雪豹科普內容，作為共同發起人的署名作品。</li>
         <li><strong>反哺家鄉：</strong>回到 0–5 歲的生活之地參與畫畫公益與義賣。</li>
-        <li><strong>跨學科視野：</strong>玄學 + 生態 + 公益三條線互相印證，作為長期成長路徑的一部分，為其未來高等教育積累實質履歷。</li>
+        <li><strong>跨學科視野：</strong>玄學 + 生態 + 公益 + 心理疏導四條線互相印證，作為長期成長路徑的一部分，為其未來高等教育積累實質履歷。</li>
         <li><strong>持續性項目：</strong>長期項目而非一次性活動。</li>
       </ul>
     </div>
@@ -645,7 +675,7 @@
       <li><strong>付款節奏：</strong>55–100 萬元按 6 階段里程碑分批支付，由四川天府中碳執行。</li>
       <li><strong>公關口徑：</strong>由集團公關事業部統一審核；姐弟雙人首次媒體露出在 Stage 3（2026.08–10）。</li>
       <li><strong>關鍵節點同月：</strong>2026.10 四川 2×100MW 儲能全容量併網 + WCS 防護欄落地，是雙線交匯的關鍵月。</li>
-      <li><strong>結果無關性：</strong>無論 A 或 B，55–100 萬投入均換回品牌、政府關係、科研數據、個人履歷四重資產。</li>
+      <li><strong>RBW 使命驗證：</strong>3 元/條起的平民定價在 6 個月內產生首批可審計用戶數據，為跨界資本敘事提供真實底材。</li>
     </ul>
   </div>
 
